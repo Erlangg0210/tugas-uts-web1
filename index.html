@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Toko Buku</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body data-page="login">
+  <main class="login-wrapper">
+    <section class="card login-card">
+      <div class="brand">📚 Toko Buku</div>
+      <h1>Selamat datang</h1>
+      <p class="muted">Masuk untuk memesan buku dan melacak pengiriman.</p>
+
+      <form id="loginForm">
+        <label for="email">Email</label>
+        <input id="email" type="email" required autocomplete="username">
+
+        <label for="password">Password</label>
+        <input id="password" type="password"
+               required autocomplete="current-password">
+
+        <button type="submit" class="full">Login</button>
+      </form>
+
+      <div class="actions">
+        <button type="button" class="secondary"
+                data-open="forgotModal">Lupa Password</button>
+        <button type="button" class="secondary"
+                data-open="registerModal">Daftar</button>
+      </div>
+      <p class="muted">Aplikasi demonstrasi untuk tugas front-end.</p>
+    </section>
+  </main>
+
+  <dialog id="forgotModal">
+    <form id="forgotForm">
+      <h2>Lupa Password</h2>
+      <p>Simulasi permintaan reset, tanpa pengiriman email.</p>
+      <label for="forgotEmail">Email terdaftar</label>
+      <input id="forgotEmail" type="email" required>
+      <div class="actions">
+        <button type="submit">Kirim Permintaan</button>
+        <button type="button" class="secondary"
+                data-close="forgotModal">Tutup</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="registerModal">
+    <form id="registerForm">
+      <h2>Daftar Akun</h2>
+      <label for="registerName">Nama lengkap</label>
+      <input id="registerName" required>
+
+      <label for="registerEmail">Email</label>
+      <input id="registerEmail" type="email" required>
+
+      <label for="registerPassword">Password (minimal 6 karakter)</label>
+      <input id="registerPassword" type="password"
+             minlength="6" required autocomplete="new-password">
+
+      <div class="actions">
+        <button type="submit">Daftar</button>
+        <button type="button" class="secondary"
+                data-close="registerModal">Tutup</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

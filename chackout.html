@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemesanan | Toko Buku</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body data-page="checkout">
+  <header id="navbar"></header>
+
+  <main class="container">
+    <h1>Pemesanan Buku</h1>
+    <p class="muted">
+      Jumlah dapat diubah sebelum pesanan dikonfirmasi.
+      Pembayaran hanya simulasi.
+    </p>
+
+    <section class="card">
+      <h2>Tambah Buku</h2>
+      <form id="addCartForm" class="form-grid">
+        <div>
+          <label for="bookSelect">Pilih buku</label>
+          <select id="bookSelect" required></select>
+        </div>
+        <div>
+          <label for="cartQuantity">Jumlah</label>
+          <input id="cartQuantity" type="number"
+                 min="1" step="1" value="1" required>
+        </div>
+        <div class="form-bottom">
+          <button type="submit">Tambah ke Pesanan</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card section">
+      <h2>Rincian Pesanan</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Buku</th><th>Harga</th><th>Jumlah</th>
+              <th>Subtotal</th><th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="cartBody"></tbody>
+        </table>
+      </div>
+      <h3>Total: <span id="cartTotal">Rp 0</span></h3>
+    </section>
+
+    <section class="card section">
+      <h2>Informasi Pemesan dan Pembayaran</h2>
+      <form id="checkoutForm" class="form-grid">
+        <div>
+          <label for="customerName">Nama pemesan</label>
+          <input id="customerName" required>
+        </div>
+        <div>
+          <label for="customerEmail">Email</label>
+          <input id="customerEmail" type="email" required>
+        </div>
+        <div>
+          <label for="customerPhone">Nomor telepon</label>
+          <input id="customerPhone" type="tel" required>
+        </div>
+        <div>
+          <label for="shipping">Ekspedisi</label>
+          <select id="shipping">
+            <option>JNE</option>
+            <option>Pos Indonesia</option>
+            <option>J&T Express</option>
+          </select>
+        </div>
+        <div>
+          <label for="payment">Metode pembayaran</label>
+          <select id="payment">
+            <option>Transfer Bank</option>
+            <option>Virtual Account</option>
+            <option>COD</option>
+          </select>
+        </div>
+        <div>
+          <label for="customerAddress">Alamat lengkap</label>
+          <textarea id="customerAddress" rows="3" required></textarea>
+        </div>
+        <div class="form-bottom">
+          <button type="submit">Konfirmasi Pesanan</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

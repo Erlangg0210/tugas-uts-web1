@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog | Toko Buku</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body data-page="stok">
+  <header id="navbar"></header>
+
+  <main class="container">
+    <h1>Informasi Stok dan Katalog</h1>
+
+    <section class="card">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Sampul</th>
+              <th>Kode</th>
+              <th>Judul Buku</th>
+              <th>Jenis</th>
+              <th>Edisi</th>
+              <th>Stok</th>
+              <th>Harga</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="bookBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card section">
+      <h2>Tambah Baris Stok Baru</h2>
+      <form id="stockForm" class="form-grid">
+        <div>
+          <label for="bookCode">Kode buku</label>
+          <input id="bookCode" required>
+        </div>
+        <div>
+          <label for="bookName">Nama buku</label>
+          <input id="bookName" required>
+        </div>
+        <div>
+          <label for="bookType">Jenis buku</label>
+          <input id="bookType" value="Buku Ajar" required>
+        </div>
+        <div>
+          <label for="bookEdition">Edisi</label>
+          <input id="bookEdition" type="number" min="1" value="1" required>
+        </div>
+        <div>
+          <label for="bookStock">Stok</label>
+          <input id="bookStock" type="number" min="0" step="1" required>
+        </div>
+        <div>
+          <label for="bookPrice">Harga (angka rupiah)</label>
+          <input id="bookPrice" type="number" min="1" step="1" required>
+        </div>
+        <div>
+          <label for="bookCover">Lokasi gambar (opsional)</label>
+          <input id="bookCover" placeholder="img/buku6.png">
+        </div>
+        <div class="form-bottom">
+          <button type="submit">Tambah Buku</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
